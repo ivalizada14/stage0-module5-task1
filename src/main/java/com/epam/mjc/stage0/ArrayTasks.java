@@ -142,8 +142,8 @@ public class ArrayTasks {
                 if(arr[i].length>arr[z].length)
                 {
                     int[] sw = arr[i].clone();
-                    arr[i] = arr[z];
-                    arr[z] = sw;
+                    arr[i] = arr[z].clone();
+                    arr[z] = sw.clone();
                 }
             }
         }
