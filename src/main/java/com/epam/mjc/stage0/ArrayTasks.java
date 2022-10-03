@@ -29,7 +29,7 @@ public class ArrayTasks {
         int numberArray[] = new int[length];
         for(int i = 0; i<length; i++)
         {
-            numberArray[i] = i;
+            numberArray[i] = i+1;
         }
         return numberArray;
     }
@@ -61,7 +61,7 @@ public class ArrayTasks {
     public int findIndexOfNumber(int[] arr, int number) {
         for(int i = 0; i<arr.length; i++)
             if(arr[i] == number)
-                return i+1;
+                return i;
 
         return -1;
     }
@@ -141,7 +141,7 @@ public class ArrayTasks {
             {
                 if(arr[i].length>arr[z].length)
                 {
-                    int[] sw = arr[i];
+                    int[] sw = arr[i].clone();
                     arr[i] = arr[z];
                     arr[z] = sw;
                 }
