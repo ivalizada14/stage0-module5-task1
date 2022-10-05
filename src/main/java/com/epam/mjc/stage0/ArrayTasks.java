@@ -119,34 +119,24 @@ public class ArrayTasks {
      * arr = [[5, 4], [7]]       -> [[7], [4, 5]]
      */
     public int[][] sortRaggedArray(int[][] arr) {
-        for(int i = 0; i<arr.length; i++)
+        for(int z = 0; z<arr.length; z++)
         {
-            for(int x = 0; x<arr[i].length; x++)
-            {
-                for(int y = x+1; y<arr[i].length; y++)
-                {
-                    if(arr[i][x]>arr[i][y])
-                    {
-                        int sw = arr[i][x];
-                        arr[i][x] = arr[i][y];
-                        arr[i][y] = sw;
+            for (int i = 0; i < arr[z].length - 1; i++)
+                for (int j = 0; j < arr[z].length - i - 1; j++)
+                    if (arr[z][j] > arr[z][j + 1]) {
+                        int temp = arr[z][j];
+                        arr[z][j] = arr[z][j + 1];
+                        arr[z][j + 1] = temp;
                     }
-                }
-            }
 
         }
-        for(int i = 0; i<arr.length; i++)
-        {
-            for(int z = i+1; z<arr.length; z++)
-            {
-                if(arr[i].length>arr[z].length)
-                {
-                    int[] sw = arr[i].clone();
-                    arr[i] = arr[z].clone();
-                    arr[z] = sw.clone();
+        for (int i = 0; i < arr.length - 1; i++)
+            for (int j = 0; j < arr.length - i - 1; j++)
+                if (arr[j].length > arr[j + 1].length) {
+                    int []temp = arr[j].clone();
+                    arr[j] = arr[j + 1].clone();
+                    arr[j + 1] = temp;
                 }
-            }
-        }
         return arr;
     }
 }
